@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>获取页面元素</title>
+	<style>
+		/*#color>li:first-child{
+			background: #250;
+		}
+		#color>li:nth-child(4){
+			background: yellow;
+		}*/
+	</style>
+	<script type="text/javascript">
+		/*
+		  querySelectorAll(css选择器)
+		     通过css选择器去获取一组元素
+		     他获取的只有一个元素，如果说有重复的，那他只取第一个
+
+		     主语
+		       document   从整个文档去获取元素
+		       父级    从父级里去获取元素
+
+		*/
+
+		window.onload=function(){
+          var lis=document.querySelectorAll('li');
+          console.dir(lis);
+
+          // 1 var color=document.querySelector('color');
+          // var lis1=color.querySelectorAll('li');
+          // 2  var lis1=color.querySelectorAll('li');
+          // 3
+          var lis1=document.querySelectorAll('.color2 li');
+         
+          console.dir(lis1);
+
+          var lis3=document.querySelectorAll('#color ul li');
+          lis3[lis3.length-1].style.background=('gold');
+          console.dir(lis3);
+
+		};
+	</script>
+</head>
+<body>
+      <ul id="color">
+      	<li>red</li>
+      	<li class="green">green</li>
+      	<li>blue</li>
+      	<li>yellow</li>
+      	<li>
+      		<ul>
+      			<li>pink</li>
+      			<li>white</li>
+      			<li>black</li>
+      			<li>gold</li>
+      			
+      		</ul>
+      	</li>
+      </ul>
+      <ul class="color2">
+      	<li>red</li>
+      	<li class="green">green</li>
+      	<li>blue</li>
+      	<li>yellow</li>
+      	<li>pink</li>
+      </ul>
+</body>
+</html>

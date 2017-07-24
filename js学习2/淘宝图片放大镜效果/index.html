@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>图片放大镜</title>
+	<style type="text/css">
+		body{
+			margin: 20px 40px;
+		}
+		#small{
+				width: 300px;
+				height: 300px;
+				float: left;
+				margin-right: 15px;
+				position: relative;
+			}
+			#small img{
+				width: 300px;
+				height: 300px;
+			}
+			#small div{
+				width: 100px;
+				height: 100px;
+				background: rgba(255,255,0,0.5);
+				position: absolute;
+				left: 0;
+				top: 0;
+				cursor: move;/*cursor 属性规定要显示的光标的类型（形状）*/
+				display: none;
+			}
+			#big{
+				width: 500px;
+				height: 500px;
+				float: left;
+				overflow: hidden;
+				position: relative;
+				display: none;
+			}
+			#big img{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var small=document.querySelector("#small");
+			 console.dir(small);
+			var  boxmove= document.querySelector('#small div');
+			 console.dir(boxmove);
+			var  big=document.querySelector("#big");
+			console.dir(big);
+			var  img=document.querySelector("#big>img");
+			 console.dir(img);
+			//给左边的div添加事件(鼠标移入事件)
+			small.onmouseover=function(){
+                     
+					/* 在这里需要做以下事件
+					 * 	1、让黄色的块显示
+					 * 	2、让右侧图片区域显示
+					*/
+			boxmove.style.display='block';
+            big.style.display='block';
+
+			};
+			
+            //鼠标移出事件
+            small.onmouseout=function(){
+            	
+            /*
+					 * 在这里需要做以下事件
+					 * 	1、让黄色的块隐藏
+					 * 	2、让右侧图片区域隐藏
+					 */
+					 boxmove.style.display='none';
+                     big.style.display="none";
+            };
+			//鼠标走的时候，让黄色的块跟着走
+			small.onmousemove=function(ev){
+				/*
+					 * 鼠标走的时候，方块需要跟着走？
+					 * 	就需要用到事件对象,clientX,clientY
+					 */
+					 // clientX 事件属性返回当事件被触发时鼠标指针向对于浏览器页面（或客户区）的水平坐标。
+			   var l=ev.clientX-small.offsetLeft-boxmove.offsetWidth/2;
+			   var t=ev.clientY-small.offsetTop-boxmove.offsetHeight/2;
+			   //不能方块出去，就需要给l、t做一个限制
+					if(l<0){
+						//这个条件判断左边的范围
+						//因为黄色的块是相对于small来定位的，所l小于0的时候就出去了
+						l=0;
+					}
+					
+					if(l>small.offsetWidth-boxmove.offsetWidth){
+						//这个条件判断右边的范围
+						l=small.offsetWidth-boxmove.offsetWidth;
+					}
+					if(t<0){
+						t=0;
+					}
+					
+					if(t>small.offsetHeight-boxmove.offsetHeight){
+						//这个条件判断下边的范围
+						
+						t=small.offsetHeight-boxmove.offsetHeight;
+					}
+
+
+					//右侧图片移动
+					/*
+					 * 左边黄色块走的比例与右边大图走的比例是一样的
+					 * 求比例
+					 * 	比例=已经走的距离/总距离(父级的宽度-自己的宽度)
+					 * 
+					 * 	
+					 * 	大图走的位置就是要算已经走的距离这个值
+					 * 	已经走的距离=比例*总距离(父级的宽度-自己的宽度)
+					 */
+					 //下面的是X轴与Y轴走的比例
+					var scaleX=l/(small.offsetWidth-boxmove.offsetWidth);
+					var scaleY=t/(small.offsetHeight-boxmove.offsetHeight);
+					img.style.left=scaleX*(big.offsetWidth-img.offsetWidth)+'px';
+					img.style.top=scaleY*(big.offsetHeight-img.offsetHeight)+'px';
+					
+					boxmove.style.left=l+'px';
+					boxmove.style.top=t+'px';
+					
+
+			};
+			
+
+		};
+	</script>
+</head>
+<body>
+        <div id="small">
+	         <img src="image/big.jpg" />
+	         <div></div>
+        </div>
+        <div id="big">
+	         <img src="image/big.jpg" />
+        </div>
+
+</body>
+</html>

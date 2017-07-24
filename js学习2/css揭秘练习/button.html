@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>button</title>
+	<style>
+		body{
+			height: 1200px;
+			background: radial-gradient(rgb(20,21,20),rgba(80,80,80,0.8));
+		}
+		h1{
+			padding:10px 20px;
+			font-size: 30px;
+		}
+		form{
+			display: block;
+			position: inherit;
+			padding: .5em;
+		}
+        /*
+		像素px是相对于显示器屏幕分辨率而言的,em是相对长度单位*/
+		.yes{
+			/*padding:10px 30px;*/padding:.2em .55em;
+			border:1px solid #446d88;
+			background: #58a linear-gradient(#77a0bb,#58a);
+			/*border-radius: 10px;*/border-radius:.4em;
+			box-shadow:0 1px 5px gray;
+			text-shadow: 0 -1px 1px #335166;
+			color:white;
+			/*font-size: 20px;*/font-size:220%;
+
+			/*line-height: 30px;*/line-height:1.5;
+			cursor: hand;
+			display: inline-block;
+		}
+		.no{
+			padding:.2em .55em;
+			border:1px solid #446d88;
+			background: #58a linear-gradient(#77a0bb,#58a);
+			border-radius:.4em;
+			box-shadow:0 0.1em 0.2em gray;
+			text-shadow: 0 -0.1em 0.1em #335166;
+			color:white;
+			/*font-size: 20px;*/font-size:220%;
+
+			/*line-height: 30px;*/line-height: 1.5;
+			cursor: hand;/*鼠标移上回出现鼠标样式*/
+			display: inline-block;
+		}
+		.ok{
+			padding: .2em .55em;
+			border: 1px solid #446d88;
+			background: linear-gradient(#77a0bb,#58a);
+			border-radius: .4em;
+			color: white;
+			box-shadow: 0 0.1em 0.1em gray;
+			text-shadow: 0 -0.1em 0.1em #335166;
+			font-size: 220%;
+			line-height: 1.5;
+			display: inline-block;
+		}
+		.Cancel{
+			background: #c00;
+		}
+		.fack{
+			background:green;
+		}
+	</style>
+</head>
+<body>
+   <h1>按钮效果</h1>
+  <form>
+  	<input type="button" name="yes" value="yes!" class="yes">
+  	<input type="button" name="no" value="no!" class="no">
+  	<input type="button" name="ok" value="ok" class="ok">
+  	<input type="button" name="Cancel" value="Cancel" class="ok Cancel">
+  	<input type="button" name="fack" value="fack" class="ok fack">
+  </form>
+</body>
+</html>

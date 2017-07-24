@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>验证码</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		form{
+			margin: 10%  20%;
+		}
+		form input{
+			float: left;
+			display: inline-block;
+			width: 150px;
+			height: 32px;
+			
+			margin-left: 10px;
+			border: 2px solid #a2a2a2;
+		}
+		#text{
+			margin-left: 10px;
+			color: #D22020;
+			float: left;
+			height: 32px;
+			line-height: 32px;
+		}
+	</style>
+</head>
+<body>
+    <form>
+    	<input type="text" name="" id="input" style="width: 200px; height: 28px;" />
+    	<input type="button" value="点击生成验证码" id="code" onclick="creoteCode()" />
+    	<input type="button" value="验证" name="" onclick="checkC()" />
+    </form>
+    <p id="text"></p>
+</body>
+</html>
+<script type="text/javascript">
+        var code;
+		function creoteCode(){
+			 // alert("dsdfd");
+			 var codelength=4;
+			code='';
+			var checkCode = document.getElementById('code');
+			var text=document.getElementById('text');
+			var random = new Array(0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','L','K','L','S','T','U','V','W','X','Y','Z');
+			for(var i=0; i<codelength; i++){
+				var index = Math.floor(Math.random()*30);
+				// Math.floor取整
+				code +=random[index];
+			}
+			checkCode.value=code;
+		}
+		function checkC(){
+			var inputCode = document.getElementById('input').value.toUpperCase();
+			if(inputCode.length<=0){
+				text.innerHTML="*请输入验证码!";
+				text.style.color='#D22020';
+				// alert("请输入验证码");
+
+			}
+			else if(inputCode == code){
+				text.innerHTML="*验证码输入正确！";
+				text.style.color='green';
+				// alert("验证码输入正确！");
+			}
+			else{
+				text.innerHTML="*验证码错误，请重新输入！";
+				// alert("验证码错误，请重新输入！");
+				text.style.color='#D22020';
+				creoteCode();
+			}
+		}
+
+
+
+
+</script>

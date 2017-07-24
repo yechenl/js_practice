@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background: #000;
+			}
+			#wrap{
+				width: 130px;
+				height: 200px;
+				margin: 150px auto;
+				position: relative;
+				transform-style: preserve-3d;
+				/*perspective: 1000px;*/
+				transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
+			}
+			#wrap>div{
+				position: absolute;
+			}
+			#wrap img{
+				vertical-align: middle;
+				box-shadow: 0 0 10px #fff;
+			}
+			#wrap div div{
+				height: 200px;
+				margin-top: 10px;
+				/*background: url(images/10.jpg);*/
+				/*transform: rotateX(180deg);*/
+				transform: scale(1,-1);
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/10.jpg);
+				opacity: 0.4;
+			}
+			
+			#wrap>div:nth-child(1) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/1.jpg);
+			}
+			#wrap>div:nth-child(2) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/2.jpg);
+			}
+			#wrap>div:nth-child(3) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/3.jpg);
+			}
+			#wrap>div:nth-child(4) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/4.jpg);
+			}
+			#wrap>div:nth-child(5) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/5.jpg);
+			}
+			#wrap>div:nth-child(6) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/6.jpg);
+			}
+			#wrap>div:nth-child(7) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/7.jpg);
+			}
+			#wrap>div:nth-child(8) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/8.jpg);
+			}
+			#wrap>div:nth-child(9) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/9.jpg);
+			}
+			#wrap>div:nth-child(10) div{
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/10.jpg);
+			}
+			
+			#wrap>div:nth-child(1){
+				transform: rotateY(36deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(2){
+				transform: rotateY(72deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(3){
+				transform: rotateY(108deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(4){
+				transform: rotateY(144deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(5){
+				transform: rotateY(180deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(6){
+				transform: rotateY(216deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(7){
+				transform: rotateY(252deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(8){
+				transform: rotateY(288deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(9){
+				transform: rotateY(324deg) translateZ(400px);
+			}
+			#wrap>div:nth-child(10){
+				transform: rotateY(360deg) translateZ(400px);
+			}
+			
+			#wrap span{
+				display: block;
+				width: 1200px;
+				height: 1200px;
+				/*background: gray;*/
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -600px;
+				margin-top: -600px;
+				
+				background: radial-gradient(rgb(50,50,50),rgba(0,0,0,0) 70%);
+				transform: translateY(110px) rotateX(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div>
+				<img src="images/1.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/2.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/3.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/4.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/5.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/6.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/7.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/8.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/9.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/10.jpg"/>
+				<div></div>
+			</div>
+			<span></span>
+		</div>
+	</body>
+</html>

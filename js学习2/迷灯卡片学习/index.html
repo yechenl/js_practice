@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style>
+   body{
+				background: #000;
+			}
+			#wrap{
+				width: 130px;
+				height: 200px;
+				margin: 150px auto;
+				position: relative;
+				transform-style: preserve-3d;
+				/*perspective: 1000px;*/
+				transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
+			}
+			#wrap>div{
+				position: absolute;
+				transition: 1s;
+			}
+			#wrap img{
+				vertical-align: middle;
+				box-shadow: 0 0 10px #fff;
+			}
+			#wrap div div{
+				height: 200px;
+				margin-top: 10px;
+				/*background: url(images/10.jpg);*/
+				/*transform: rotateX(180deg);*/
+				transform: scale(1,-1);
+				background: linear-gradient(rgb(0,0,0) 40%,rgba(0,0,0,0)),url(images/10.jpg);
+				opacity: 0.4;
+			}
+			
+			
+			#wrap span{
+				display: block;
+				width: 1200px;
+				height: 1200px;
+				/*background: gray;*/
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -600px;
+				margin-top: -600px;
+				
+				background: radial-gradient(rgb(50,50,50),rgba(0,0,0,0) 70%);
+				transform: translateY(110px) rotateX(90deg);
+			}
+   </style>
+   <!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+   <script type="text/javascript" src="js/index.js"></script>
+   <title>迷灯卡片</title>
+</head>
+<body>
+     <div id="wrap">
+			<div>
+				<img src="images/1.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/2.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/3.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/4.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/5.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/6.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/7.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/8.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/9.jpg"/>
+				<div></div>
+			</div>
+			<div>
+				<img src="images/10.jpg"/>
+				<div></div>
+			</div>
+			<span></span>
+		</div>
+
+</body>
+</html> 

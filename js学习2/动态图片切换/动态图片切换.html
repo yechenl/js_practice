@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>动态图片切换</title>
+	<style type="text/css">
+	body{
+		height:auto;
+		width:1200px;
+		margin:50px auto;
+		background-color: #f06;
+
+	}
+	.img>img{
+		margin:8px;
+		display: block;
+		width:80%;
+		height: auto;
+		box-shadow: 10px 10px 6px #f2f2f2 ;
+	}
+		
+	</style>
+	<script type="text/javascript">
+		/*
+		需求：
+		点击button切换图pain
+
+		分析：
+		1.获取button的id和图片的id
+        2.点击事件
+           1.用属性操作的方法去修改图片的src
+           2.把数字存在一个变量里，点击下一张，这个变量加
+		*/
+		window.onload=function(){
+			var prev=document.getElementById('prev');
+			var next=document.getElementById('next');
+			var pic=document.getElementById('pic');
+			var num=1;
+			next.onclick=function(){
+				num+=1;
+				//console.log(num);
+				if(num<5){
+					//console.log(pic);
+					pic.src='image/'+num+'.JPG';
+
+				}else{
+					num=1;
+					pic.src='image/'+num+'.JPG';
+				}
+			};
+			prev.onclick=function(){
+				//console.log(num);
+				if(num>1){
+					num--;
+					//console.log(pic);
+					pic.src='image/'+num+'.JPG';
+
+				}else{
+					num=4;
+					pic.src='image/'+num+'.JPG';
+				}
+			};	
+			
+		}
+	</script>
+	
+</head>
+<body>
+     <input type="button" id="prev" value="上一张" />
+     <input type="button" id="next" value="下一张" />
+     <div class="img">
+           <img src="image/1.JPG"  id="pic" />
+     </div>
+</body>
+</html>

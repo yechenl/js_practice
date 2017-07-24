@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>选项卡</title>
+	<style type="text/css">
+		#divs>div{
+			width: 200px;
+			height: 200px;
+			border:1px solid #000;
+			display: none;
+			margin-top: 10px;
+			
+		}
+	</style>
+     <script type="text/javascript">
+          window.onload=function(){
+               var inputs=document.querySelectorAll("#inputs>input");
+               var divs=document.querySelectorAll("#divs>div");
+               var last=inputs[0];
+               console.log(inputs);
+               console.log(divs);
+               for(var i=0; i<inputs.length;i++){
+                      inputs[i].index=i;//给每一个inputs【i】添加索引值。
+                      inputs[i].onclick=function(){
+                      last.style.background="none";
+                      divs[last.index].style.display="none";
+                      this.style.background="yellow";
+                      divs[this.index].style.display="block";
+                      last=this;
+
+                    };
+               }
+          }
+
+     </script>
+</head>
+<body>
+     <form id="inputs">
+     	<input type="button" value="选项1" style="background: yellow;" />
+     	<input type="button" value="选项2"  />
+     	<input type="button" value="选项3"  />
+     </form>
+     <div id="divs">
+     	<div style="display:block;">内容1
+     	</div>
+     	<div>内容2</div>
+     	<div>内容3</div>
+     </div>
+
+</body>
+</html>

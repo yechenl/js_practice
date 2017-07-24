@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            margin:0;
+            padding:0;
+            font-size: 14px;
+            line-height: 28px;
+            font-weight: bold;
+        }
+        .main{
+            width:450px;
+            margin-left:auto;
+            margin-right:auto;
+            text-align: center;
+            background:#1c85b4;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="images/banner.jpg">
+    </div>
+    <div class="main">
+        <form action="" method="get" name="myform">
+            请选择游戏类别：
+            <select id="gameType" onchange="changeGame()" style="width:120px">
+                <option>--游戏分类--</option>
+            </select><br/>
+            请选择游戏名称：
+            <select id="gameList" style="width:120px">
+                <option>--游戏名称--</option>
+            </select><br/>
+            <img src="images/login.gif" style="margin:20px"/>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    var game = new Array();//定义一个数组 var str='中国';
+    game['纸牌游戏']=['斗地主','炸金花','拖拉机','三打哈'];
+    game['棋类游戏']=['五子棋','军棋','中国象棋','围棋'];
+    game['其他游戏']=['LOL','魔兽世界','阴阳师','王者荣耀'];
+    function changeGame(){
+        //alert(12345);
+        var gameType = document.getElementById('gameType').value;
+        //alert(gameType);
+        var gameList = document.getElementById('gameList');
+        gameList.options.length=0;//清楚select下拉框中的选项
+        for(var i in game){
+            if(i == gameType){
+                for(var j in game[i]){
+                    //game['纸牌游戏'][j]
+                    gameList.add(new Option(game[i][j]),null);
+                }
+            }
+        }
+    }
+    function allGame(){
+        var gameType = document.getElementById('gameType');
+        for(var i in game){
+            gameType.add(new Option(i,i),null);
+        }
+    }
+    window.onload=allGame();
+</script>
